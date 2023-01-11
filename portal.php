@@ -89,22 +89,32 @@ if(isset($_GET["register"])){
                 $event_date = strtotime($row['DATE']);
                 $current_date = time();
                 $days_remaining = floor(($event_date - $current_date) / 86400);
+                $no_registered = $row['REGISTERED'];
         ?>
             <div id="segment">
-                <h1 class="s_heading"><?php echo $row['HEADING']; ?></h1>
+                <div class="contain2">
+                    <div>
+                        <h1 class="s_heading"><?php echo $row['HEADING']; ?></h1>
+                    </div>
+                    <div>
+                        <h2><?php echo "Days Remaining: ".$days_remaining;?></h2>
+                        <h2><?php echo "No of Registration: ".$no_registered;?></h2>
+                    </div>
+                </div>
                 <div class="contain">
                     <div class = "s_data">
-                        <?php echo $row['DETAILS']; ?>
-                        <h2> <?php echo $days_remaining." days remaining";?></h2>
+                        <div><?php echo $row['DETAILS']; ?></div>
+                        <div>
+                            <form method="get">
+                                <input type="hidden" name="event" value="<?php echo $row['SNO']; ?>">
+                                <input type="submit" value="Register" class = "register_btn" name="register">
+                            </form>
+                        </div>
                     </div>
                     <div class="s_right">
                         <img class="s_photo" src="<?php echo "Data/".$row['PHOTO']; ?>" alt="this is photo">
                     </div> 
-                </div> 
-                <form method="get">
-                    <input type="hidden" name="event" value="<?php echo $row['SNO']; ?>">
-                    <input type="submit" value="Register" class = "register_btn" name="register">
-                </form>
+                </div>
             </div>
         <?php
             }
