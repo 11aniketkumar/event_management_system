@@ -32,6 +32,13 @@ if(isset($_GET["un_register"])){
     fclose($temp_handle);
     unlink($file);
     rename($temp_file, $file);
+
+    include 'connection.php';
+
+    $query = "UPDATE `events` SET `REGISTERED` = `REGISTERED` - 1 WHERE `SNO` = $heading; ";
+    mysqli_query($con, $query);
+    mysqli_close($con);
+
     echo "<script>alert('You have un-registered successfully!')</script>";
 }
 

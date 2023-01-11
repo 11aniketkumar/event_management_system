@@ -60,32 +60,33 @@ if(isset($_POST["submit"])){
             </ul>
         </div>
         <div id="page">
-            <div id="form_design">
-                <form method="post" enctype="multipart/form-data">
-                    <label for="heading">Event Heading:</label>
-                    <input type="text" id="heading" name="heading" placeholder="Enter event heading..." required><br>
-
-                    <label for="event_type">Event Type:</label>
-                    <select id="event_type" name="event_type" required>
-                        <option value="" disabled selected>Select an event type</option>
-                        <option value="Workshop">Workshop</option>
-                        <option value="Technical Talks">Technical Talks</option>
-                        <option value="Paper Presentation">Paper Presentation</option>
-                        <option value="Other">Other</option>
-                    </select><br>
-                    
-                    <label for="photo">Upload Photo:</label>
-                    <input type="file" id="photo" name="photo" accept="image/*" required><br>
-                    
-                    <label for="datetime">Date and Time:</label>
-                    <input type="datetime-local" id="datetime" name="datetime" required><br>
-                    
-                    <label for="details">Details:</label>
-                    <textarea id="details" name="details" rows="5" cols="30" placeholder="Enter event details..." maxlength="500" required></textarea><br>
-                    
+            <form method="post" enctype="multipart/form-data">
+                <div id="form_design">
+                    <div class="column1">
+                        <div> <label for="heading">Event Heading:</label></div>
+                        <div><label for="event_type">Event Type:</label></div>
+                        <div><label for="photo">Upload Photo:</label></div>
+                        <div><label for="datetime">Date and Time:</label></div>
+                        <div><label for="details">Details:</label></div>
+                    </div>
+                    <div class = "column2">
+                        <div><input type="text" id="heading" name="heading" placeholder="Enter event heading..." required><br></div>
+                        <div>
+                            <select id="event_type" name="event_type" required>
+                                <option value="" disabled selected>Select an event type</option>
+                                <option value="Workshop">Workshop</option>
+                                <option value="Technical Talks">Technical Talks</option>
+                                <option value="Paper Presentation">Paper Presentation</option>
+                                <option value="Other">Other</option>
+                            </select><br>
+                        </div>
+                        <div><input type="file" id="photo" name="photo" accept="image/*" required><br></div>
+                        <div><input type="datetime-local" id="datetime" name="datetime" required><br></div>
+                        <div><textarea id="details" name="details" rows="5" cols="30" placeholder="Enter event details..." maxlength="500" required></textarea><br></div>
+                    </div>
+                </div>
                     <input class = "submit_btn" type="submit" value="Submit" name="submit">
-                </form>
-            </div>
+            </form>
         </div>
     </div>
 </body>

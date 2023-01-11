@@ -1,6 +1,7 @@
 * {
     margin: 0px;
     padding: 0px;
+    font-family: sans-serif;
 }
 
 body {
@@ -8,7 +9,7 @@ body {
 }
 
 .btn{
-    background-color: indigo;
+    background-color: rgb(107, 16, 171);
     color: white;
     font-weight: bold;
     border: none;
@@ -30,7 +31,7 @@ body {
 
 #sidebar {
     width: 20%;
-    background-color: rgb(121, 70, 197);
+    background-color: rgb(138, 89, 211);
     color: white;
     height: 100%;
     text-align: center;
@@ -55,7 +56,7 @@ body {
 #page {
     margin: 0px;
     height: 100%;
-    background-color: blue;
+    background-color: rgba(237, 228, 241, 0.71);
     width: 80%;
     float: right;
     overflow: auto;
@@ -65,7 +66,12 @@ body {
     margin: 40px;
     padding: 20px;
     background-color: white;
-    border-radius: 7px;
+    border-radius: 8px;
+    border: 1px solid purple;
+}
+
+#segment:hover {
+    border: 2px solid purple;
 }
 
 .s_heading{
@@ -97,7 +103,7 @@ body {
 }
 
 .register_btn{
-    background-color: indigo;
+    background-color: rgb(91, 11, 148);
     color: white;
     font-weight: bold;
     border-radius: 10px;

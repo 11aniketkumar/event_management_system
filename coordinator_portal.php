@@ -29,7 +29,7 @@ if(isset($_GET['remove'])) {
 <body>
     <div id="container">
         <div id="sidebar">
-            <h1>System</h1><br>
+            <h1>Events</h1><br>
             <ul>
                 <li><a href="new_event.php" class="btn">New Event</a></li>
                 <li><a href="#" class="btn">Home</a></li>

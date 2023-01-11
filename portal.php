@@ -19,6 +19,7 @@ if(isset($_GET["register"])){
     $SNO = $_SESSION['sno'];
     $file = "Data/" . $heading . ".txt";
     $student_exist = false;
+
     if(file_exists($file)){
         $handle = fopen($file, "r");
         while (($line = fgets($handle)) !== false) {
@@ -31,6 +32,13 @@ if(isset($_GET["register"])){
         if(!$student_exist){
             $handle = fopen($file, "a");
             fwrite($handle, $SNO . "\n");
+
+            include 'connection.php';
+
+            $query = "UPDATE `events` SET `REGISTERED` = `REGISTERED` + 1 WHERE `SNO` = $heading; ";
+            mysqli_query($con, $query);
+            mysqli_close($con);
+
             echo "<script>alert('Registration completed successfully!')</script>";
         } else {
             echo "<script>alert('You already have registered for this event!')</script>";
@@ -38,6 +46,13 @@ if(isset($_GET["register"])){
     } else {
         $handle = fopen($file, "w");
         fwrite($handle, $SNO . "\n");
+
+        include 'connection.php';
+
+        $query = "UPDATE `events` SET `REGISTERED` = `REGISTERED` + 1 WHERE `SNO` = $heading; ";
+        mysqli_query($con, $query);
+        mysqli_close($con);
+
         echo "<script>alert('Registration completed successfully!')</script>";
     }
     fclose($handle);
