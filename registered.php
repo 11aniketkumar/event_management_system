@@ -67,7 +67,7 @@ if(isset($_GET["submit_rating"])){
 
 <html>
 <head>
-    <title>df</title>
+    <title>Registered</title>
     <link rel = "stylesheet" href="design.css">
 </head>
 <body>
@@ -77,7 +77,6 @@ if(isset($_GET["submit_rating"])){
             <ul>
                 <li><a href="portal.php" class="btn">Home</a></li>
                 <li><a href="#" class="btn active">Registered</a></li>
-                <li><a href="#" class="btn">Feedback</a></li>
                 <form method="get">
                 <li><input class="btn" type="submit" name="logout" value="Log Out"></li>
                 </form>
@@ -125,7 +124,7 @@ if(isset($_GET["submit_rating"])){
                 <div class="contain">
                     <div class = "s_data">
                         <div>
-                            <h3>EVENT TYPE: <?php echo $row['TYPE']; ?></h3><br>
+                            <h3>| TYPE: <?php echo $row['TYPE']; ?> || RATING: <?php echo $row['FEEDBACK']; ?> |</h3><br>
                             <?php echo $row['DETAILS']; ?>
                         </div>
                         <div> 

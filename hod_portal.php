@@ -32,7 +32,7 @@ if(isset($_GET['remove'])) {
 
 <html>
 <head>
-    <title>df</title>
+    <title>Home</title>
     <link rel = "stylesheet" href="hod_design.css">
 </head>
 <body>
@@ -41,7 +41,7 @@ if(isset($_GET['remove'])) {
             <h1>System</h1><br>
             <ul>
                 <li><a href="#" class="btn">Home</a></li>
-                <li><a href="#" class="btn">Feedback</a></li>
+                <li><a href="new_event.php" class="btn">New Event</a></li>
                 <form method="get">
                 <li><input class="btn" type="submit" name="logout" value="Log Out"></li>
                 </form>

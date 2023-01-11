@@ -43,7 +43,7 @@ if(isset($_POST["submit"])){
 
 <html>
 <head>
-    <title>df</title>
+    <title>Create</title>
     <link rel = "stylesheet" href="coordinator_design.css">
 </head>
 <body>
@@ -51,9 +51,8 @@ if(isset($_POST["submit"])){
         <div id="sidebar">
             <h1>System</h1><br>
             <ul>
-                <li><a href="#" class="btn active">New Event</a></li>
                 <li><a href="coordinator_portal.php" class="btn">Home</a></li>
-                <li><a href="#" class="btn">Feedback</a></li>
+                <li><a href="#" class="btn active">New Event</a></li>
                 <form method="get">
                 <li><input class="btn" type="submit" name="logout" value="Log Out"></li>
                 </form>
@@ -74,9 +73,11 @@ if(isset($_POST["submit"])){
                         <div>
                             <select id="event_type" name="event_type" required>
                                 <option value="" disabled selected>Select an event type</option>
+                                <option value="Tech Event">Tech Event</option>
                                 <option value="Workshop">Workshop</option>
                                 <option value="Technical Talks">Technical Talks</option>
                                 <option value="Paper Presentation">Paper Presentation</option>
+                                <option value="Gaming">Gaming</option>
                                 <option value="Other">Other</option>
                             </select><br>
                         </div>
