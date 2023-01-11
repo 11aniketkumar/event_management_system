@@ -1,0 +1,169 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    height: 100%;
+}
+
+.btn{
+    background-color: indigo;
+    color: white;
+    font-weight: bold;
+    border: none;
+    font-size: 24px;
+    text-decoration: none;
+    display: block;
+    padding: 10px 0px;
+    width: 100%;
+}
+
+.btn:hover{
+    background-color: rgb(146, 91, 228);
+}
+
+#container {
+    height: 100%;
+    width: 100%;
+}
+
+#sidebar {
+    width: 20%;
+    background-color: rgb(121, 70, 197);
+    color: white;
+    height: 100%;
+    text-align: center;
+    position: fixed;
+    float: left;
+}
+
+#sidebar h1 {
+    padding: 10px;
+    font-size: 40px;
+}
+
+#sidebar ul {
+    padding: 0px;
+}
+
+#sidebar li {
+    list-style: none;
+    background-color: rgb(121, 70, 197);
+}
+
+#page {
+    margin: 0px;
+    height: 100%;
+    background-color: rgb(255, 243, 229);
+    width: 80%;
+    float: right;
+    overflow: auto;
+}
+
+#segment {
+    margin: 40px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 7px;
+}
+
+.s_heading{
+    padding: 5px;
+    margin: 10px;
+}
+
+.contain{
+    display: flex;
+    flex-direction: row;
+}
+
+.s_data{
+    width: 50%;
+    padding: 10px;
+    font-size: 20px;
+    margin: 2px;
+}
+
+.s_right{
+    width: 50%;
+    padding: 5px;
+}
+
+.s_photo{
+    height: 400px;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.register_btn{
+    background-color: indigo;
+    color: white;
+    font-weight: bold;
+    border-radius: 10px;
+    font-size: 24px;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+}
+
+.register_btn:hover{
+    background-color: rgb(146, 91, 228);
+}
+
+
+
+
+
+
+#form_design {
+    font-weight: bold;
+    font-size: 30px;
+    border-radius: 15px;
+    margin: 30px auto;
+    padding: 10px 50px;
+}
+
+#form_design label {
+    font-size: 30px;
+    padding: 5px;
+    margin: 15px;
+}
+
+#form_design select {
+    font-size: 24px;
+    margin: 15px;
+    padding: 2px;
+    border-radius: 10px;
+    width: 50%;
+}
+
+#form_design input {
+    font-size: 24px;
+    padding: 5px;
+    margin: 15px;
+    border-radius: 10px;
+    width: 50%;
+}
+
+#form_design textarea {
+    font-size: 24px;
+    border-radius: 10px;
+    margin: 20px;
+}
+
+.submit_btn{
+    background-color: rgb(11, 5, 193);
+    color: white;
+    font-weight: bold;
+    border-radius: 10px;
+    display: block;
+    padding: 30px;
+    margin: 30px;
+    width: 170px;
+    height: 60px;
+}
+
+.submit_btn:hover{
+    background-color: rgb(146, 91, 228);
+}
