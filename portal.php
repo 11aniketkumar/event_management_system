@@ -71,7 +71,7 @@ if(isset($_GET["register"])){
         <div id="sidebar">
             <h1>System</h1><br>
             <ul>
-                <li><a href="#" class="btn">Home</a></li>
+                <li><a href="#" class="active btn">Home</a></li>
                 <li><a href="registered.php" class="btn">Registered</a></li>
                 <li><a href="#" class="btn">Feedback</a></li>
                 <form method="get">
@@ -92,18 +92,30 @@ if(isset($_GET["register"])){
                 $no_registered = $row['REGISTERED'];
         ?>
             <div id="segment">
-                <div class="contain2">
+            <div class="contain2">
                     <div>
                         <h1 class="s_heading"><?php echo $row['HEADING']; ?></h1>
                     </div>
                     <div>
-                        <h2><?php echo "Days Remaining: ".$days_remaining;?></h2>
+                        <h2>
+                            <?php 
+                            if($days_remaining < 0) {
+                                $event_status = 1;
+                                echo "Event completed!";
+                            } else {
+                                echo "Days Remaining: ".$days_remaining;
+                            }
+                            ?>
+                        </h2>
                         <h2><?php echo "No of Registration: ".$no_registered;?></h2>
                     </div>
                 </div>
                 <div class="contain">
                     <div class = "s_data">
-                        <div><?php echo $row['DETAILS']; ?></div>
+                        <div>
+                            <h3>EVENT TYPE: <?php echo $row['TYPE']; ?></h3><br>
+                            <?php echo $row['DETAILS']; ?>
+                        </div>
                         <div>
                             <form method="get">
                                 <input type="hidden" name="event" value="<?php echo $row['SNO']; ?>">

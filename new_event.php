@@ -51,7 +51,7 @@ if(isset($_POST["submit"])){
         <div id="sidebar">
             <h1>System</h1><br>
             <ul>
-                <li><a href="#" class="btn">New Event</a></li>
+                <li><a href="#" class="btn active">New Event</a></li>
                 <li><a href="coordinator_portal.php" class="btn">Home</a></li>
                 <li><a href="#" class="btn">Feedback</a></li>
                 <form method="get">

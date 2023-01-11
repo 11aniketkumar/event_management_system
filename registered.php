@@ -42,6 +42,27 @@ if(isset($_GET["un_register"])){
     echo "<script>alert('You have un-registered successfully!')</script>";
 }
 
+if(isset($_GET["submit_rating"])){
+    $rating = $_GET['rating'];
+    $heading = $_GET['event'];
+
+    include 'connection.php';
+
+    $query = "SELECT * FROM `events` WHERE `SNO` = $heading ";
+    $result = mysqli_query($con, $query);
+    $row = mysqli_fetch_assoc($result);
+    $feedback = $row['FEEDBACK'];
+
+    if($feedback == -1){
+        $feedback = $rating;
+    }else{
+        $feedback = ($feedback + $rating)/2;
+    }
+    $query = "UPDATE `events` SET `feedback` = '$feedback' WHERE `events`.`SNO` = $heading; ";
+    mysqli_query($con, $query);
+    mysqli_close($con);
+}
+
 ?>
 
 <html>
@@ -55,7 +76,7 @@ if(isset($_GET["un_register"])){
             <h1>System</h1><br>
             <ul>
                 <li><a href="portal.php" class="btn">Home</a></li>
-                <li><a href="#" class="btn">Registered</a></li>
+                <li><a href="#" class="btn active">Registered</a></li>
                 <li><a href="#" class="btn">Feedback</a></li>
                 <form method="get">
                 <li><input class="btn" type="submit" name="logout" value="Log Out"></li>
@@ -74,6 +95,7 @@ if(isset($_GET["un_register"])){
                 $current_date = time();
                 $days_remaining = floor(($event_date - $current_date) / 86400);
                 $no_registered = $row['REGISTERED'];
+                $event_status = 0;
                 $file = "Data/" . $row['SNO'] . ".txt";
                 if(file_exists($file)){
                     $handle = fopen($file, "r");
@@ -87,18 +109,48 @@ if(isset($_GET["un_register"])){
                         <h1 class="s_heading"><?php echo $row['HEADING']; ?></h1>
                     </div>
                     <div>
-                        <h2><?php echo "Days Remaining: ".$days_remaining;?></h2>
+                        <h2>
+                            <?php 
+                            if($days_remaining < 0) {
+                                $event_status = 1;
+                                echo "Event completed!";
+                            } else {
+                                echo "Days Remaining: ".$days_remaining;
+                            }
+                            ?>
+                        </h2>
                         <h2><?php echo "No of Registration: ".$no_registered;?></h2>
                     </div>
                 </div>
                 <div class="contain">
                     <div class = "s_data">
-                        <div><?php echo $row['DETAILS']; ?></div>
                         <div>
-                            <form method="get">
-                                <input type="hidden" name="event" value="<?php echo $row['SNO']; ?>">
-                                <input type="submit" value="UN-Register" class = "register_btn" name="un_register">
-                            </form>
+                            <h3>EVENT TYPE: <?php echo $row['TYPE']; ?></h3><br>
+                            <?php echo $row['DETAILS']; ?>
+                        </div>
+                        <div> 
+                            <?php
+                            if($event_status == 1){
+                                echo '<form method="get">
+                                        <input type="hidden" name="event" value="'.$row['SNO'].'">
+                                        <label for="rating">Give Rating:</label>
+                                        <select name="rating">
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                        </select>
+                                        <input type="submit" class="register_btn" name="submit_rating" value="Submit">
+                                    </form>';
+                            }else {
+                                echo '<form method="get">';
+                                echo '<input type="hidden" name="event" value="' . $row['SNO'] . '">';
+                                // Other form elements and fields goes here
+                                echo '<input type="submit" value="UN-Register" class="register_btn" name="un_register">';
+                                echo '</form>';
+                            }
+                            ?>
                         </div>
                     </div>
                     <div class="s_right">
@@ -117,3 +169,4 @@ if(isset($_GET["un_register"])){
     </div>
 </body>
 </html>
+
