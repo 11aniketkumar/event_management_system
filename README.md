@@ -33,7 +33,7 @@ The Event Management System is a web-based application that allows users to crea
 ![Login](https://github.com/11aniketkumar/event_management_system/raw/main/images/login.png)
 
 ### Events Page
-![Event](https://github.com/11aniketkumar/event_management_system/blob/main/images/event.png)
+![Event](https://github.com/11aniketkumar/event_management_system/raw/main/images/event.png)
 
 ### New Event Page
 ![Event](https://github.com/11aniketkumar/event_management_system/raw/main/images/new_event.png)
