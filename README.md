@@ -23,13 +23,20 @@ The Event Management System is a web-based application that allows users to crea
 
 1. Clone the repository to your local machine.
 2. Set up a web server with PHP and MySQL support.
-3. I will soon upload a `database.sql` file, Import the provided `database.sql` file into your MySQL server to create the necessary tables.
+3. Import the provided `portal.sql` file into your MySQL server to create the necessary tables.
 4. Update the `connection.php` file with your MySQL database credentials.
 5. Access the application through the web server.
 
 ## Screenshots
 
-_TODO: Include some relevant screenshots here._
+### Login
+![Login](https://github.com/11aniketkumar/event_management_system/raw/main/images/login.png)
+
+### Events Page
+![Event](https://github.com/11aniketkumar/event_management_system/blob/main/images/event.png)
+
+### New Event Page
+![Event](https://github.com/11aniketkumar/event_management_system/raw/main/images/new_event.png)
 
 ## License
 
