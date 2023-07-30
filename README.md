@@ -29,7 +29,7 @@ The Event Management System is a web-based application that allows users to crea
 
 ## Screenshots
 
-_Include some relevant screenshots of your application here._
+_TODO: Include some relevant screenshots here._
 
 ## License
 
